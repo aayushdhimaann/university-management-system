@@ -30,7 +30,9 @@ public class SliderFrame extends JFrame implements Runnable{
             try{
                 Thread.sleep(1);
             }
-            catch(Exception e){}
+            catch(Exception e){
+                e.printStackTrace();
+            }
         }
         
     }
@@ -40,6 +42,7 @@ public class SliderFrame extends JFrame implements Runnable{
             setVisible(false);
             
             new Login();
+            
         }
         catch(Exception e){
             System.out.println(e);

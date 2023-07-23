@@ -345,7 +345,11 @@ public class AddStudent1 extends javax.swing.JFrame {
         String c=(String)course.getSelectedItem();
         String b=(String)branch.getSelectedItem();
         
-        try{
+        if(name.equals("")||father.equals("")||rollno.equals("")||date.equals("")||address.equals("")||phone.equals("")||email.equals("")||ten.equals("")||tw.equals("")||aadhar.equals("")||c.equals("")||b.equals("")){
+            JOptionPane.showMessageDialog(null, "please enter all the details");
+        }
+        else{
+            try{
             Conn c1=new Conn();
             String qry="insert into student_info values (?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement ps=c1.con.prepareStatement(qry);
@@ -370,9 +374,11 @@ public class AddStudent1 extends javax.swing.JFrame {
             else
                 JOptionPane.showMessageDialog(null, "Record not added");
            
-        }catch(Exception e){
-            System.out.println(e);
+            }catch(Exception e){
+                System.out.println(e);
+            }
         }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void taadharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taadharActionPerformed

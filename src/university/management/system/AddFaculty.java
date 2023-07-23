@@ -302,7 +302,11 @@ public class AddFaculty extends javax.swing.JFrame {
         String qual=(String)cqual.getSelectedItem();
         String department=(String )cdep.getSelectedItem();
         
-        try{
+        if(name.equals("")||father.equals("")||eno.equals("")||date.equals(ABORT)||address.equals("")||phone.equals("")||email.equals("")||ten.equals("")||twelfth.equals("")||aadhar.equals("")||qual.equals("")||department.equals("")){
+            JOptionPane.showMessageDialog(null, "Please enter all the details");
+        }
+        else{
+            try{
             Conn c1=new Conn();
             String qry="insert into faculty_info values (?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement ps=c1.con.prepareStatement(qry);
@@ -327,9 +331,11 @@ public class AddFaculty extends javax.swing.JFrame {
             else
                 JOptionPane.showMessageDialog(null, "Record not added");
            
-        }catch(Exception e){
-            System.out.println(e);
+            }catch(Exception e){
+                System.out.println(e);
+            }
         }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void cqualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cqualActionPerformed
