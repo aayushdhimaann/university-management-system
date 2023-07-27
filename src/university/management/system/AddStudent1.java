@@ -350,30 +350,30 @@ public class AddStudent1 extends javax.swing.JFrame {
         }
         else{
             try{
-            Conn c1=new Conn();
-            String qry="insert into student_info values (?,?,?,?,?,?,?,?,?,?,?,?)";
-            PreparedStatement ps=c1.con.prepareStatement(qry);
-            ps.setString(1, name);
-            ps.setString(2, father);
-            ps.setString(3, rollno);
-            ps.setString(4,date);
-            ps.setString(5,address);
-            ps.setString(6,phone);
-            ps.setString(7,email);
-            ps.setString(8, ten);
-            ps.setString(9,tw);
-            ps.setString(10,aadhar);
-            ps.setString(11, c);
-            ps.setString(12,b);
-            int a=ps.executeUpdate();
-            if(a==1){
-                JOptionPane.showMessageDialog(null, "Record added");
-//                System.exit(0);
-                setVisible(false);
-            }
-            else
-                JOptionPane.showMessageDialog(null, "Record not added");
-           
+                Conn c1=new Conn();
+                String qry="insert into student_info values (?,?,?,?,?,?,?,?,?,?,?,?)";
+                PreparedStatement ps=c1.con.prepareStatement(qry);
+                ps.setString(1, name);
+                ps.setString(2, father);
+                ps.setString(3, rollno);
+                ps.setString(4,date);
+                ps.setString(5,address);
+                ps.setString(6,phone);
+                ps.setString(7,email);
+                ps.setString(8, ten);
+                ps.setString(9,tw);
+                ps.setString(10,aadhar);
+                ps.setString(11, c);
+                ps.setString(12,b);
+                int a=ps.executeUpdate();
+                if(a==1){
+                    JOptionPane.showMessageDialog(null, "Record added");
+    //                System.exit(0);
+                    setVisible(false);
+                }
+                else
+                    JOptionPane.showMessageDialog(null, "Record not added");
+
             }catch(Exception e){
                 System.out.println(e);
             }
